@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 이사만루체 폰트 */
+@font-face {
+  font-family: 'esamanru';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/esamanru.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  body {
+    @apply bg-gukbap-ivory text-gukbap-darkBrown;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gukbap-red hover:bg-gukbap-lightRed text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+  }
+
+  .btn-option {
+    @apply bg-white hover:bg-gukbap-cream border-2 border-gukbap-brown text-gukbap-darkBrown font-medium py-4 px-6 rounded-2xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 hover:border-gukbap-red;
+  }
+
+  .card {
+    @apply bg-white rounded-3xl shadow-xl p-8;
+  }
+
+  /* 게임 버튼 스타일 */
+  .game-button {
+    @apply bg-[#E9B84A] text-[#5C4A32] font-bold py-4 px-12 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+    font-family: 'esamanru', sans-serif;
+  }
+
+  .feedback-button {
+    @apply bg-[#F5A0A0] text-[#5C4A32] font-semibold py-2 px-4 rounded-xl transition-all duration-200;
+    font-family: 'esamanru', sans-serif;
+  }
+}
+
