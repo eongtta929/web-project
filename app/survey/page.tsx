@@ -259,8 +259,8 @@ export default function SurveyPage() {
                           </p>
                           <p className="text-2xl font-bold text-[#5C4A32]">
                             {index + 1}위
-                          </p>
-                        </div>
+                      </p>
+                    </div>
                       ))}
                   </div>
                 </div>

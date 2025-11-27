@@ -13,6 +13,7 @@
 @layer base {
   body {
     @apply bg-gukbap-ivory text-gukbap-darkBrown;
+    font-family: 'esamanru', sans-serif;
   }
 }
 

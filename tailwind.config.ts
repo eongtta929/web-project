@@ -17,6 +17,9 @@ const config: Config = {
           lightRed: "#FF6F43",
         },
       },
+      fontFamily: {
+        esamanru: ['esamanru', 'sans-serif'],
+      },
     },
   },
   plugins: [],

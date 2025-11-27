@@ -148,7 +148,7 @@ export default function AnalyticsPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gukbap-red"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#E9B84A]"></div>
       </div>
     );
   }
@@ -159,20 +159,20 @@ export default function AnalyticsPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">결과 시각화</h1>
-        <p className="text-gray-600 mt-1">설문 응답 데이터 분석</p>
+        <h1 className="text-4xl text-gukbap-darkBrown">결과 시각화</h1>
+        <p className="text-gukbap-brown mt-1 text-lg">설문 응답 데이터 분석</p>
       </div>
 
       {/* 인구통계 분석 */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white rounded-xl shadow-sm p-6 border border-gray-200"
+        className="bg-gukbap-cream rounded-3xl shadow-lg p-6 border-2 border-gukbap-darkBrown"
       >
-        <h2 className="text-xl font-bold text-gray-900 mb-6">📊 인구통계 분석</h2>
+        <h2 className="text-2xl text-gukbap-darkBrown mb-6">인구통계 분석</h2>
         
         <div className="mb-8">
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">성별/연령대별 응답 분포</h3>
+          <h3 className="text-xl text-gukbap-darkBrown mb-4">성별/연령대별 응답 분포</h3>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie
@@ -195,7 +195,7 @@ export default function AnalyticsPage() {
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">성별/연령대별 국밥 결과 분포</h3>
+          <h3 className="text-xl text-gukbap-darkBrown mb-4">성별/연령대별 국밥 결과 분포</h3>
           <ResponsiveContainer width="100%" height={400}>
             <BarChart data={demographicByResult}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -217,13 +217,13 @@ export default function AnalyticsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="bg-white rounded-xl shadow-sm p-6 border border-gray-200"
+        className="bg-gukbap-cream rounded-3xl shadow-lg p-6 border-2 border-gukbap-darkBrown"
       >
-        <h2 className="text-xl font-bold text-gray-900 mb-6">🌶️ 맛 선호도 분석</h2>
+        <h2 className="text-2xl text-gukbap-darkBrown mb-6">맛 선호도 분석</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Q1: 현재 상태</h3>
+            <h3 className="text-base text-gukbap-brown mb-3">Q1: 현재 상태</h3>
             <ResponsiveContainer width="100%" height={200}>
               <PieChart>
                 <Pie
@@ -245,7 +245,7 @@ export default function AnalyticsPage() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Q4: 맵기 선호도</h3>
+            <h3 className="text-base text-gukbap-brown mb-3">Q4: 맵기 선호도</h3>
             <ResponsiveContainer width="100%" height={200}>
               <PieChart>
                 <Pie
@@ -267,7 +267,7 @@ export default function AnalyticsPage() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Q6: 국밥 철학</h3>
+            <h3 className="text-base text-gukbap-brown mb-3">Q6: 국밥 철학</h3>
             <ResponsiveContainer width="100%" height={200}>
               <PieChart>
                 <Pie
@@ -295,13 +295,13 @@ export default function AnalyticsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="bg-white rounded-xl shadow-sm p-6 border border-gray-200"
+        className="bg-gukbap-cream rounded-3xl shadow-lg p-6 border-2 border-gukbap-darkBrown"
       >
-        <h2 className="text-xl font-bold text-gray-900 mb-6">🥬 토핑 선호도 분석</h2>
+        <h2 className="text-2xl text-gukbap-darkBrown mb-6">토핑 선호도 분석</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Q2: 메인 토핑</h3>
+            <h3 className="text-base text-gukbap-brown mb-3">Q2: 메인 토핑</h3>
             <ResponsiveContainer width="100%" height={200}>
               <BarChart data={getToppingPreference('Q2')}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -314,7 +314,7 @@ export default function AnalyticsPage() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Q3: 면 사리</h3>
+            <h3 className="text-base text-gukbap-brown mb-3">Q3: 면 사리</h3>
             <ResponsiveContainer width="100%" height={200}>
               <BarChart data={getToppingPreference('Q3')}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -327,7 +327,7 @@ export default function AnalyticsPage() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">Q5: 토핑 종류</h3>
+            <h3 className="text-base text-gukbap-brown mb-3">Q5: 토핑 종류</h3>
             <ResponsiveContainer width="100%" height={200}>
               <BarChart data={getToppingPreference('Q5')}>
                 <CartesianGrid strokeDasharray="3 3" />

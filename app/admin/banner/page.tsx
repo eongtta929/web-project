@@ -138,7 +138,7 @@ export default function BannerManagementPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gukbap-red"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#E9B84A]"></div>
       </div>
     );
   }
@@ -146,33 +146,33 @@ export default function BannerManagementPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">배너 관리</h1>
-        <p className="text-gray-600 mt-1">결과 화면에 표시될 이벤트 배너 관리</p>
+        <h1 className="text-4xl text-gukbap-darkBrown">배너 관리</h1>
+        <p className="text-gukbap-brown mt-1 text-lg">결과 화면에 표시될 이벤트 배너 관리</p>
       </div>
 
       {/* 배너 업로드 */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white rounded-xl shadow-sm p-6 border border-gray-200"
+        className="bg-gukbap-cream rounded-3xl shadow-lg p-6 border-2 border-gukbap-darkBrown"
       >
-        <h2 className="text-xl font-bold text-gray-900 mb-4">새 배너 업로드</h2>
+        <h2 className="text-2xl text-gukbap-darkBrown mb-4">새 배너 업로드</h2>
         
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-base font-bold text-gukbap-brown mb-2">
               배너 이미지
             </label>
             <input
               type="file"
               accept="image/*"
               onChange={handleFileChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gukbap-red focus:border-transparent"
+              className="w-full px-4 py-2 border border-gukbap-brown rounded-2xl focus:ring-2 focus:ring-[#E9B84A] focus:border-[#E9B84A] bg-white"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-base font-bold text-gukbap-brown mb-2">
               링크 URL (선택사항)
             </label>
             <input
@@ -180,14 +180,14 @@ export default function BannerManagementPage() {
               value={newBanner.linkUrl}
               onChange={(e) => setNewBanner({ ...newBanner, linkUrl: e.target.value })}
               placeholder="https://example.com"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gukbap-red focus:border-transparent"
+              className="w-full px-4 py-2 border border-gukbap-brown rounded-2xl focus:ring-2 focus:ring-[#E9B84A] focus:border-[#E9B84A] bg-white"
             />
           </div>
 
           <button
             onClick={handleUpload}
             disabled={uploading || !newBanner.file}
-            className="px-6 py-3 bg-gukbap-red text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-6 py-3 bg-[#E9B84A] text-[#5C4A32] rounded-2xl text-lg hover:bg-opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
           >
             {uploading ? '업로드 중...' : '배너 업로드'}
           </button>
@@ -199,21 +199,21 @@ export default function BannerManagementPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="bg-white rounded-xl shadow-sm p-6 border border-gray-200"
+        className="bg-gukbap-cream rounded-3xl shadow-lg p-6 border-2 border-gukbap-darkBrown"
       >
-        <h2 className="text-xl font-bold text-gray-900 mb-4">배너 목록</h2>
+        <h2 className="text-2xl text-gukbap-darkBrown mb-4">배너 목록</h2>
         
         {banners.length === 0 ? (
-          <p className="text-gray-500 text-center py-8">등록된 배너가 없습니다.</p>
+          <p className="text-gukbap-brown text-center py-8">등록된 배너가 없습니다.</p>
         ) : (
           <div className="space-y-4">
             {banners.map((banner) => (
               <div
                 key={banner.id}
-                className="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex items-center gap-4 p-4 border-2 border-gukbap-brown rounded-2xl hover:bg-gukbap-ivory transition-colors bg-white"
               >
                 {/* 배너 미리보기 */}
-                <div className="relative w-48 h-24 bg-gray-100 rounded overflow-hidden flex-shrink-0">
+                <div className="relative w-48 h-24 bg-gukbap-ivory rounded-xl overflow-hidden flex-shrink-0 border border-gukbap-brown">
                   <img
                     src={banner.image_url}
                     alt="배너"
@@ -225,21 +225,21 @@ export default function BannerManagementPage() {
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <span
-                      className={`px-2 py-1 text-xs font-semibold rounded ${
+                      className={`px-3 py-1 text-xs rounded-full ${
                         banner.is_active
-                          ? 'bg-green-100 text-green-800'
-                          : 'bg-gray-100 text-gray-800'
+                          ? 'bg-green-200 text-green-900'
+                          : 'bg-gray-200 text-gray-800'
                       }`}
                     >
                       {banner.is_active ? '활성' : '비활성'}
                     </span>
                   </div>
                   {banner.link_url && (
-                    <p className="text-sm text-gray-600 truncate">
+                    <p className="text-sm text-gukbap-brown truncate">
                       링크: {banner.link_url}
                     </p>
                   )}
-                  <p className="text-xs text-gray-400 mt-1">
+                  <p className="text-xs text-gukbap-brown mt-1">
                     등록일: {new Date(banner.created_at).toLocaleDateString('ko-KR')}
                   </p>
                 </div>
@@ -248,9 +248,9 @@ export default function BannerManagementPage() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => toggleActive(banner.id, banner.is_active)}
-                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    className={`px-4 py-2 rounded-2xl transition-colors shadow-md ${
                       banner.is_active
-                        ? 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                        ? 'bg-gray-300 text-gray-800 hover:bg-gray-400'
                         : 'bg-green-600 text-white hover:bg-green-700'
                     }`}
                   >
@@ -258,7 +258,7 @@ export default function BannerManagementPage() {
                   </button>
                   <button
                     onClick={() => deleteBanner(banner.id, banner.image_url)}
-                    className="px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-colors"
+                    className="px-4 py-2 bg-red-600 text-white rounded-2xl hover:bg-red-700 transition-colors shadow-md"
                   >
                     삭제
                   </button>
@@ -270,9 +270,9 @@ export default function BannerManagementPage() {
       </motion.div>
 
       {/* 안내 메시지 */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-        <p className="text-sm text-blue-800">
-          💡 <strong>참고:</strong> 활성화된 배너만 결과 화면에 표시됩니다. 여러 배너를 활성화하면 무작위로 하나가 표시됩니다.
+      <div className="bg-blue-100 border-2 border-blue-400 rounded-2xl p-4">
+        <p className="text-sm text-blue-900">
+          <strong>참고:</strong> 활성화된 배너만 결과 화면에 표시됩니다. 여러 배너를 활성화하면 무작위로 하나가 표시됩니다.
         </p>
       </div>
     </div>

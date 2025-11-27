@@ -141,7 +141,7 @@ export default function AdminDashboard() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gukbap-red"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#E9B84A]"></div>
       </div>
     );
   }
@@ -151,15 +151,15 @@ export default function AdminDashboard() {
       {/* 헤더 */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">대시보드</h1>
-          <p className="text-gray-600 mt-1">국밥 취향 테스트 통계</p>
+          <h1 className="text-4xl text-gukbap-darkBrown">대시보드</h1>
+          <p className="text-gukbap-brown mt-1 text-lg">국밥 취향 테스트 통계</p>
         </div>
         <button
           onClick={handleExportToGoogleSheets}
           disabled={exporting}
-          className="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors disabled:opacity-50"
+          className="px-6 py-3 bg-green-600 text-white rounded-2xl text-lg hover:bg-green-700 transition-colors disabled:opacity-50 shadow-lg"
         >
-          {exporting ? '내보내는 중...' : '📊 Google Sheet로 내보내기'}
+          {exporting ? '내보내는 중...' : 'Google Sheet로 내보내기'}
         </button>
       </div>
 
@@ -168,16 +168,15 @@ export default function AdminDashboard() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-xl shadow-sm p-6 border border-gray-200"
+          className="bg-gukbap-cream rounded-3xl shadow-lg p-6 border-2 border-gukbap-darkBrown"
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">총 응답 수</p>
-              <p className="text-4xl font-bold text-gray-900 mt-2">
+              <p className="text-base text-gukbap-brown">총 응답 수</p>
+              <p className="text-5xl text-gukbap-darkBrown mt-2">
                 {stats?.totalResponses.toLocaleString()}
               </p>
             </div>
-            <div className="text-5xl">📝</div>
           </div>
         </motion.div>
 
@@ -185,16 +184,15 @@ export default function AdminDashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-white rounded-xl shadow-sm p-6 border border-gray-200"
+          className="bg-gukbap-cream rounded-3xl shadow-lg p-6 border-2 border-gukbap-darkBrown"
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600">오늘 응답 수</p>
-              <p className="text-4xl font-bold text-gray-900 mt-2">
+              <p className="text-base text-gukbap-brown">오늘 응답 수</p>
+              <p className="text-5xl text-gukbap-darkBrown mt-2">
                 {stats?.todayResponses.toLocaleString()}
               </p>
             </div>
-            <div className="text-5xl">🎯</div>
           </div>
         </motion.div>
       </div>
@@ -204,18 +202,18 @@ export default function AdminDashboard() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="bg-white rounded-xl shadow-sm p-6 border border-gray-200"
+        className="bg-gukbap-cream rounded-3xl shadow-lg p-6 border-4 border-gukbap-darkBrown"
       >
-        <h2 className="text-xl font-bold text-gray-900 mb-4">최근 7일 응답 추이</h2>
+        <h2 className="text-2xl text-gukbap-darkBrown mb-4">최근 7일 응답 추이</h2>
         {stats?.last7Days && stats.last7Days.length > 0 ? (
           <div className="space-y-3">
             {stats.last7Days.map((day, index) => (
               <div key={index} className="flex items-center">
-                <div className="w-32 text-sm text-gray-600">{day.date}</div>
+                <div className="w-32 text-sm text-gukbap-brown">{day.date}</div>
                 <div className="flex-1">
-                  <div className="bg-gray-200 rounded-full h-8 overflow-hidden">
+                  <div className="bg-gukbap-ivory rounded-full h-10 overflow-hidden border border-gukbap-brown">
                     <div
-                      className="bg-gukbap-red h-full flex items-center justify-end pr-3 text-white text-sm font-semibold"
+                      className="bg-[#E9B84A] h-full flex items-center justify-end pr-3 text-[#5C4A32] text-sm"
                       style={{
                         width: `${Math.max((day.count / Math.max(...stats.last7Days.map(d => d.count))) * 100, 10)}%`,
                       }}
@@ -228,7 +226,7 @@ export default function AdminDashboard() {
             ))}
           </div>
         ) : (
-          <p className="text-gray-500 text-center py-8">최근 7일간 응답이 없습니다.</p>
+          <p className="text-gukbap-brown text-center py-8">최근 7일간 응답이 없습니다.</p>
         )}
       </motion.div>
 
@@ -237,20 +235,40 @@ export default function AdminDashboard() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="bg-white rounded-xl shadow-sm p-6 border border-gray-200"
+        className="bg-gukbap-cream rounded-3xl shadow-lg p-6 border-4 border-gukbap-darkBrown"
       >
-        <h2 className="text-xl font-bold text-gray-900 mb-4">국밥 유형별 분포</h2>
+        <h2 className="text-2xl text-gukbap-darkBrown mb-4">국밥 유형별 분포</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {stats?.resultDistribution.map((result, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-gukbap-ivory to-gukbap-cream rounded-xl p-4 text-center"
-            >
-              <div className="text-4xl mb-2">{result.emoji}</div>
-              <div className="text-sm text-gray-600 mb-1 capitalize">{result.type}</div>
-              <div className="text-2xl font-bold text-gray-900">{result.count}</div>
-            </div>
-          ))}
+          {stats?.resultDistribution.map((result, index) => {
+            const imageMap: Record<string, string> = {
+              clear: '맑은국밥.png',
+              white: '뽀얀국밥.png',
+              fire: '불꽃국밥.png',
+              mara: '마라국밥.png',
+            };
+            const nameMap: Record<string, string> = {
+              clear: '맑은 국밥',
+              white: '뽀얀 국밥',
+              fire: '불꽃 국밥',
+              mara: '마라 국밥',
+            };
+            return (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-4 text-center border-2 border-gukbap-brown shadow-md"
+              >
+                <div className="w-20 h-20 mx-auto mb-2 relative">
+                  <img
+                    src={`/game-images/${imageMap[result.type]}`}
+                    alt={nameMap[result.type]}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="text-sm text-gukbap-brown mb-1">{nameMap[result.type]}</div>
+                <div className="text-3xl text-gukbap-darkBrown">{result.count}</div>
+              </div>
+            );
+          })}
         </div>
       </motion.div>
     </div>

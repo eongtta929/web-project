@@ -48,23 +48,23 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gukbap-ivory">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-md"
       >
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="bg-gukbap-cream rounded-3xl shadow-2xl p-8 border-2 border-gukbap-darkBrown">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              🍲 국밥 취향 테스트
+            <h1 className="text-4xl text-gukbap-darkBrown mb-2">
+              국밥 취향 테스트
             </h1>
-            <p className="text-gray-600">어드민 로그인</p>
+            <p className="text-gukbap-brown text-lg">어드민 로그인</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-base text-gukbap-darkBrown mb-2">
                 이메일
               </label>
               <input
@@ -73,13 +73,13 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gukbap-red focus:border-transparent"
+                className="w-full px-4 py-3 border border-gukbap-brown rounded-2xl focus:ring-2 focus:ring-[#E9B84A] focus:border-[#E9B84A] bg-white text-gukbap-darkBrown"
                 placeholder="admin@example.com"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="password" className="block text-base text-gukbap-darkBrown mb-2">
                 비밀번호
               </label>
               <input
@@ -88,13 +88,13 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gukbap-red focus:border-transparent"
+                className="w-full px-4 py-3 border-2 border-gukbap-brown rounded-2xl focus:ring-2 focus:ring-gukbap-red focus:border-gukbap-red bg-white text-gukbap-darkBrown"
                 placeholder="••••••••"
               />
             </div>
 
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+              <div className="bg-red-100 border border-red-400 text-red-800 px-4 py-3 rounded-2xl text-sm">
                 {error}
               </div>
             )}
@@ -102,7 +102,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gukbap-red text-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-[#E9B84A] text-[#5C4A32] py-4 rounded-2xl text-lg hover:bg-opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
             >
               {loading ? '처리 중...' : mode === 'login' ? '로그인' : '회원가입'}
             </button>
@@ -111,14 +111,14 @@ export default function AdminLoginPage() {
           <div className="mt-6 text-center">
             <button
               onClick={() => setMode(mode === 'login' ? 'signup' : 'login')}
-              className="text-sm text-gukbap-red hover:underline"
+              className="text-sm text-[#E9B84A] hover:underline"
             >
               {mode === 'login' ? '계정이 없으신가요? 회원가입' : '이미 계정이 있으신가요? 로그인'}
             </button>
           </div>
 
-          <div className="mt-6 pt-6 border-t border-gray-200">
-            <p className="text-xs text-gray-500 text-center">
+          <div className="mt-6 pt-6 border-t border-gukbap-brown">
+            <p className="text-xs text-gukbap-brown text-center">
               어드민 계정은 사전에 등록된 이메일만 사용할 수 있습니다.
             </p>
           </div>

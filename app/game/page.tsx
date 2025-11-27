@@ -328,22 +328,13 @@ export default function GamePage() {
       return (
         <div className="min-h-screen bg-[#E8E4DB] flex items-center justify-center p-4" style={{ fontFamily: 'esamanru, sans-serif' }} onClick={() => setStoryPage(9)}>
           <HomeIcon />
-          <div className="flex items-center gap-8 max-w-4xl">
-            <div className="flex-1 text-center">
-              <img src="/game-images/먹는 남자애.png" alt="먹는 남자애" className="w-48 h-auto mx-auto mb-4" />
-              {selectedSoup && (
-                <img src={soupImages[selectedSoup]} alt="국밥" className="w-32 h-auto mx-auto mb-4" />
-              )}
-              <p className="text-sm text-[#5C4A32]">
-                할머니, 저, 헤어진 여동생을 만나게 되면<br />
-                꼭 이 국밥을 만들어주고 싶어요...<br />
-                비법을 알려주실 수 있나요?
-              </p>
-            </div>
-            <div className="relative">
-              <img src="/game-images/말풍선.png" alt="말풍선" className="w-48 h-auto" />
-              <img src="/game-images/여동생.png" alt="여동생" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-auto" />
-            </div>
+          <div className="flex flex-col items-center max-w-4xl">
+            <img src="/game-images/여동생 생각하는 남자애.png" alt="여동생 생각하는 남자애" className="w-64 h-auto mb-8" />
+            <p className="text-base text-[#5C4A32] text-center">
+              할머니, 저, 헤어진 여동생을 만나게 되면<br />
+              꼭 이 국밥을 만들어주고 싶어요...<br />
+              비법을 알려주실 수 있나요?
+            </p>
           </div>
         </div>
       );
