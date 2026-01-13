@@ -1,3 +1,5 @@
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -13,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+                <GoogleAnalytics />
+        {children}
+      </body>
     </html>
   );
 }
